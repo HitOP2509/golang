@@ -1,6 +1,6 @@
 package main
 
-import "github.com/HitOP2509/golang.git/basics"
+import basics "github.com/HitOP2509/golang.git/basics/01_hello_world"
 
 func main() {
 	basics.HelloWorld()
