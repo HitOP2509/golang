@@ -30,6 +30,102 @@ Go (Golang) is a statically typed language, meaning every variable has a defined
 | float32 | Single precision |
 | float64 | Double precision |
 
+# Single vs Double Precision (Go)
+
+Floating-point precision defines how many bits are used to store a number, which affects both **accuracy** and **range**.
+
+---
+
+## Single Precision (`float32`)
+
+```go
+var x float32 = 3.1415927
+```
+
+- Uses **32 bits (4 bytes)**
+- Precision: ~**6–7 decimal digits**
+- Structure:
+  - 1 bit → sign
+  - 8 bits → exponent
+  - 23 bits → fraction (mantissa)
+
+### Example
+
+```go
+var a float32 = 1.123456789
+fmt.Println(a) // Output: 1.1234568 (rounded)
+```
+
+---
+
+## Double Precision (`float64`)
+
+```go
+var x float64 = 3.141592653589793
+```
+
+- Uses **64 bits (8 bytes)**
+- Precision: ~**15–16 decimal digits**
+- Structure:
+  - 1 bit → sign
+  - 11 bits → exponent
+  - 52 bits → fraction (mantissa)
+
+### Example
+
+```go
+var b float64 = 1.123456789
+fmt.Println(b) // Output: 1.123456789 (more accurate)
+```
+
+---
+
+## Key Differences
+
+| Feature       | float32 (Single)  | float64 (Double) |
+| ------------- | ----------------- | ---------------- |
+| Size          | 32 bits / 4 bytes | 64bits / 8 bytes |
+| Precision     | ~6–7 digits       | ~15–16 digits    |
+| Memory usage  | Lower             | Higher           |
+| Accuracy      | Less              | More             |
+| Default in Go | ❌                | ✅               |
+
+---
+
+## When to Use
+
+### Use `float32` when:
+
+- Memory usage matters (e.g., large datasets, graphics)
+- Small precision loss is acceptable
+
+### Use `float64` when:
+
+- Accuracy is important (e.g., calculations, backend logic)
+- General-purpose programming (recommended)
+
+---
+
+## Important Note
+
+Floating-point numbers are not always exact:
+
+```go
+fmt.Println(0.1 + 0.2) // 0.30000000000000004
+```
+
+This happens due to binary representation limitations.
+
+---
+
+## Summary
+
+- `float32` → smaller, faster, less precise
+- `float64` → larger, slower, more precise
+- Go uses `float64` by default for better accuracy
+
+---
+
 #### Complex Types
 
 | Type       | Description              |
