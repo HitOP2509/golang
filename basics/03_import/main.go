@@ -1,4 +1,4 @@
-package imp
+package main
 
 //GO std libraries
 import (
@@ -6,7 +6,9 @@ import (
 	net "net/http" //Named import
 )
 
-func ImportStatement() {
+//ImportStatement
+
+func main() {
 	fmt.Println("Import Statement")
 
 	// res, err := http.Get("https://jsonplaceholder.typicode.com/todos/1") //Using http when imported as http
