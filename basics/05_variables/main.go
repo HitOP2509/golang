@@ -44,13 +44,6 @@ func main() {
 
 	/*
 	 *
-	 *  Constants
-	 *
-	 */
-	const l int = 10 //can't be modified once declared
-
-	/*
-	 *
 	 *  Array
 	 *
 	 */
@@ -103,4 +96,21 @@ func main() {
 
 	fmt.Println(salaryPtr, &derefSalary) //0xe3fab5f40f0 0xe3fab5f40f8 - Memory addresses are different
 
+	/*
+	 *
+	 *  Constants
+	 *
+	 */
+
+	//Typed constants
+	const TYPED_CONST int = 10 //can't be modified once declared, neither go caninfer the type
+
+	//Untyped constants
+	const UNTYPED_CONST_INT = 10
+	const UNTYPED_CONST_FLOAT = 4.0
+	fmt.Println(UNTYPED_CONST_INT / UNTYPED_CONST_FLOAT) //OUTPUT: 2.5
+
+	const TYPED_INT int = 10
+	const TYPED_FLOAT float64 = 4.0
+	// fmt.Println(TYPED_INT / TYPED_FLOAT) //OUTPUT: throws error:  TYPED_INT / TYPED_FLOAT (mismatched types int and float64)
 }
