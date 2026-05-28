@@ -41,14 +41,14 @@ func main() {
 
 	//Condition - Do no metion the variable beside switch
 
-	age := 18
+	age := 1
 
 	switch {
+	case age >= 16 && age < 18:
+		fmt.Println("Teen")
+
 	case age >= 18:
 		fmt.Println("Adult")
-
-	case age >= 16:
-		fmt.Println("Teen")
 
 	default:
 		fmt.Println("Minor")
