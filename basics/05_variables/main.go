@@ -3,13 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	/*
-	 *
-	 *  Integers
-	 *
-	 */
+	/************************ Integer ************************/
 
-	//int (int size depends on system architecture: usually 64-bit on modern 64-bit machines)
+	//NOTE: int (int size depends on system architecture: usually 64-bit on modern 64-bit machines)
+
 	var a int = 10
 	var b int = 20
 
@@ -19,36 +16,24 @@ func main() {
 	var e int32 = 30 //takes 32bit memory
 	var f int64 = 40 //takes 64bit memory
 
-	/*
-	 *
-	 *  Floats
-	 *
-	 */
+	/************************ Float ************************/
+
 	var g float32 = 10.012345678910 //Stores approximate 32-bit floating-point value
 	var h float64 = 20.012345678910 //Stores approximate 64-bit floating-point value
 
-	/*
-	 *
-	 *  Booleans
-	 *
-	 */
+	/************************ Boolean ************************/
+
 	var i bool = true
 	var j bool = false
 
-	/*
-	 *
-	 *  Strings
-	 *
-	 */
+	/************************ String ************************/
+
 	var k string = "String value"
 
-	/*
-	 *
-	 *  Array
-	 *
-	 */
+	/************************ Array ************************/
 
-	// Array declaration & initialization - Can't be declared with "const"
+	// NOTE: Array declaration & initialization - Can't be declared with "const"
+
 	var arr [2]int = [2]int{1, 2} //Fixed size
 
 	//Short-hand array declaration & initialization
@@ -60,11 +45,7 @@ func main() {
 	// Specific Indices
 	names := [3]string{2: "Amit", 0: "Rohit", 1: "Neha"} //OUTPUT: [Rohit Neha Amit]
 
-	/*
-	 *
-	 *  *********************** Slice ***********************
-	 *
-	 */
+	/************************ Slice ************************/
 
 	var slc []int = []int{1, 2, 3, 4, 5} //Dynamic size
 	var makeArr = make([]int, 3, 5)      //type, size, capacity
@@ -76,26 +57,19 @@ func main() {
 	// Result: [0, 0, 0] (But it has 2 extra hidden slots reserved for future growth).
 	// So appending more values to it will not create new array rather utilize the existing 1 unless the capacity exceeds
 
-	/*
-	 *  *********************** Map ***********************
-	 *
-	 *  A map has key-value pairs where keys are unique.
-	 *	The key type and value type are defined when the map is created.
-	 *	All keys must have the same type, and all values must have the same type.
-	 *	Maps are implemented using hash tables, which provide efficient average-case lookups, insertions, and deletions.
-	 *
-	 */
+	/************************ Map ************************/
+
+	//  A map has key-value pairs where keys are unique.
+	//  The key type and value type are defined when the map is created.
+	//  All keys must have the same type, and all values must have the same type.
+	//  Maps are implemented using hash tables, which provide efficient average-case lookups, insertions, and deletions.
 
 	var m map[string]int = map[string]int{"a": 1, "b": 2}
 
-	/*
-	 *
-	 *  *********************** Structs ***********************
-	 *
-	 *	Way to create dynamic style maps (Similar to JS Objects)
-	 * 	But you can't add new fields to struct at runtime like you can do with JS objects, you have to define all the fields at compile time
-	 *
-	 */
+	/************************ Structs ************************/
+
+	//	Way to create dynamic style maps (Similar to JS Objects)
+	//	But you can't add new fields to struct at runtime like you can do with JS objects, you have to define all the fields at compile time
 
 	type Person struct {
 		Name string
@@ -106,30 +80,22 @@ func main() {
 
 	fmt.Println(a, b, c, d, e, f, g, h, i, j, k, arr, arr2, inferredArrSize, names, slc, m["a"], p.Name)
 
-	/*
-	 *
-	 *  *********************** Pointers ***********************
-	 *
-	 *	A way to store memory address of a variable
-	 *
-	 */
+	/************************ Pointers ************************/
+
+	//	A way to store memory address of a variable
+
 	var salary int = 10_000      //Memory allocated
 	var salaryPtr *int = &salary //Memory address
-	/*
-		Dereferencing a pointer means retrieving the value of the variable from Memory location it points to
-		and assign to a new variable which will be stored in the new memory location
-	*/
+
+	//	Dereferencing a pointer means retrieving the value of the variable from Memory location it points to and assign to a new variable which will be stored in the new memory location
 	var derefSalary int = *salaryPtr
 
 	fmt.Println(salaryPtr, &derefSalary) //0xe3fab5f40f0 0xe3fab5f40f8 - Memory addresses are different
 
-	/*
-	 *
-	 *  Constants
-	 *
-	 */
+	/************************ Constants ************************/
 
-	//Typed constants: We explicitly define the type of the constant, so it will always be of that type and cannot be used with other types without explicit conversion
+	//	Typed constants: We explicitly define the type of the constant, so it will always be of that type and cannot be used with other types without explicit conversion
+
 	const TYPED_INT int = 10
 	const TYPED_FLOAT float64 = 4.0
 	// fmt.Println(TYPED_INT / TYPED_FLOAT) //OUTPUT: throws error:  TYPED_INT / TYPED_FLOAT (mismatched types int and float64)
