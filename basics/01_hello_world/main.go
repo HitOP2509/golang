@@ -5,5 +5,4 @@ import "fmt"
 //HelloWorld
 func main() {
 	fmt.Println("Hello, World!")
-
 }
